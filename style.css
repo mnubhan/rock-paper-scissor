@@ -1,0 +1,44 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+.button{
+    display: flex;
+    justify-content: center;
+}
+#box1{
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+#box2{
+    margin: 10px;
+    width:100px;
+    height:100px;
+    background-color:blue;
+}
+#box3{
+    margin: 10px;
+    width:100px;
+    height:100px;
+    background-color:green;
+}
+#box4{
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+#box5{
+    margin: 10px;
+    width:100px;
+    height:100px;
+    background-color:blue;
+}
+#box6{
+    margin: 10px;
+    width:100px;
+    height:100px;
+    background-color:green;
+}
