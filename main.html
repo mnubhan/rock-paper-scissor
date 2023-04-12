@@ -10,17 +10,26 @@
   <body>
     <header>
       <h1>Rock Paper Scissor</h1>
-      <div class="button">
-        <div id="box1"></div>
-        <div id="box2"></div>
-        <div id="box3"></div>
-      </div>
-      <div class="button">
-        <div id="box4"></div>
-        <div id="box5"></div>
-        <div id="box6"></div>
-      </div>
     </header>
-    <div></div>
+    <div>
+      <div id="user-label" class="badge">user</div>
+      <div id="computer-label" class="badge">comp</div>
+      <span id="user-score">0</span>:<span id="computer-score">0</span>
+    </div>
+    <div>
+      <p>Paper covers rock. You win!</p>
+    </div>
+    <div class="choices">
+      <div class="choice" id="r">
+        <img src="image/rock.png" alt="">
+      </div>
+      <div class="choice" id="p">
+        <img src="image/paper.png" alt="">
+      </div>
+      <div class="choice" id="s">
+        <img src="image/scissor.png" alt="">
+      </div>
+    </div>
+    <p id="action-message">Make your move</p>
   </body>
 </html>
