@@ -1,26 +1,32 @@
-/* *do research on this import */
-/* @import url("https://fonts.googleapis.com/css2?family=Asap:400,500,700") */
-/* @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap") */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*do research on this import
+@import url("https://fonts.googleapis.com/css2?family=Asap:400,500,700");
+/* @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"); */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    background : white;
+header {
+  background: white;
 }
-body{
-    background: #24272E;
+body {
+  background: #24272e;
 }
-h1{
-    color: #24272E;
-    text-align:center;
-    font-family: 'Asap', sans-serif;
+h1 {
+  color: #24272e;
+  text-align: center;
+  font-family: "Asap", sans-serif;
 }
 
-.score-board{
-    margin: 20px auto;
-    border: 3px solid white;
-    width: 200px;
+.score-board {
+  margin: 20px auto;
+  border: 3px solid white;
+  border-radius: 4px;
+  padding: 15px 20px;
+  text-align: center;
+  width: 200px;
+  color: white;
+  font-size: 46px;
+  font-family: "Asap", sans-serif;
 }
