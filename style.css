@@ -29,12 +29,38 @@ h1 {
   color: white;
   font-size: 46px;
   font-family: "Asap", sans-serif;
+  /* 
+  *position relative is used to position the child element absolute.
+  *position relative it relate to it original position in the body element or within the parent element.
+  *change the position of the element relative to parent element and where it would be in the body element.
+  *position absolute look for parent that have position relative. If it  doesn't find that it goes to grand parent which is the body element which has a default relative position
+  */
+  position: relative; 
 }
-
+/* learn about position property effect on parent and chile element */
 .badge{
   background: #E2584D;
   color: white;
-  font-size: 20px;
+  font-size: 14px;
   padding: 2px 10px;
   font-family: "Asap", sans-serif;
+}
+
+#user-label{
+  /* 
+  *position absolute look for parent that have position relative. If it doesn't find that it goes to grand parent which is the body element which has a default relative position 
+  *can use position absolute to position the element anywhere in the body element.
+  *it will be at top of everything.
+  *it will not affect the other element in the body element.
+  *can use z-index to change the order of the element.
+  */
+  position: absolute;
+  top: 30px;
+  left: -25px;
+}
+
+#computer-label{
+  position: absolute;
+  top: 30px;
+  right: -30px;
 }
