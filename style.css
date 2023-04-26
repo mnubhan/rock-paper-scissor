@@ -64,3 +64,10 @@ h1 {
   top: 30px;
   right: -30px;
 }
+
+
+.result{
+  color: white; /* color property is used to set text color */
+  font-size: 46px;
+  text-align: center;
+}
