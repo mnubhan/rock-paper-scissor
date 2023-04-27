@@ -69,5 +69,23 @@ h1 {
 .result{
   color: white; /* color property is used to set text color */
   font-size: 46px;
+}
+
+.result > p {
   text-align: center;
+  font-weight: bold;
+  font-family: Asap, sans-serif;
+}
+
+.choices{
+  text-align:center;
+}
+
+.choice{
+  display: inline-block;
+}
+
+img{
+  height:100px;
+  width:100px;
 }
