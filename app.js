@@ -13,6 +13,23 @@ const result_div = document.getElementsByClassName("result");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissor_div = document.getElementById("s");
+
+function getComputerChoice(){
+  const choices = ['rock', 'paper', 'scissor']
+  /* 
+  *Math.random() will return a random number between 0 and 1
+  */
+  randomNumber=Math.floor(Math.random()*3);
+  return choices[randomNumber]
+}
+console.log(getComputerChoice());
+/* 
+*reuse function will be called when the user click on the rock, paper, or scissor
+*/
+
+function game(userChoice) {
+  console.log("user choice => " + userChoice);
+}
 /*
  *catch what happen in the web browser through event listener
  *event listener is a function that will be called when something happen
@@ -23,12 +40,24 @@ const scissor_div = document.getElementById("s");
  *2nd parameter is the function that will be executed when the event occurs
  *event handler is a function that will be called when the specified event is delivered to the target
  */
-rock_div.addEventListener("click", function () {
-  console.log("hey you clicked on rock");
-});
-paper_div.addEventListener("click", function () {
-  console.log("hey you clicked on paper");
-});
-scissor_div.addEventListener("click", function () {
-  console.log("hey you clicked on rock");
-});
+
+function main() {
+  rock_div.addEventListener("click", function () {
+    game("rock");
+    // console.log("hey you clicked on rock");
+  });
+  paper_div.addEventListener("click", function () {
+    game("paper")
+    // console.log("hey you clicked on paper");
+  });
+  scissor_div.addEventListener("click", function () {
+    game("scissor")
+    // console.log("hey you clicked on scissor");
+  });
+}
+
+/* 
+*function need to be called so that it will be executed
+*/
+
+main();
