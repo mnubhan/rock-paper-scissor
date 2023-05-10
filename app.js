@@ -14,6 +14,10 @@ const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissor_div = document.getElementById("s");
 
+/* 
+*function for computer choice
+*/
+
 function getComputerChoice(){
   const choices = ['rock', 'paper', 'scissor']
   /* 
@@ -22,13 +26,30 @@ function getComputerChoice(){
   randomNumber=Math.floor(Math.random()*3);
   return choices[randomNumber]
 }
+getComputerChoice();
 console.log(getComputerChoice());
 /* 
 *reuse function will be called when the user click on the rock, paper, or scissor
 */
 
 function game(userChoice) {
+  const computerChoice = getComputerChoice();
   console.log("user choice => " + userChoice);
+  console.log("computer choice => " + computerChoice);
+  switch(userChoice + computerChoice){
+    case "paperrock":
+    case "scissorpaper":
+    case "rockscissor":
+      console.log("user win")
+      break;
+    case "rockpaper":
+    case "paperscissor":
+    case "scissorrock":
+      console.log("user lose")
+      break;
+    default:
+      console.log("draw")
+  }
 }
 /*
  *catch what happen in the web browser through event listener
