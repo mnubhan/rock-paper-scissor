@@ -4,51 +4,63 @@
  *this is catch the dom element
  *so that we doesn't have to call it again and again
  */
-const userScore = 0;
-const computerScore = 0;
+let userScore = 0;
+let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoredBoard_div = document.getElementsByClassName("score-board");
-const result_div = document.getElementsByClassName("result");
+const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissor_div = document.getElementById("s");
 
-/* 
-*function for computer choice
-*/
+/*
+ *function for computer choice
+ */
 
-function getComputerChoice(){
-  const choices = ['rock', 'paper', 'scissor']
-  /* 
-  *Math.random() will return a random number between 0 and 1
-  */
-  randomNumber=Math.floor(Math.random()*3);
-  return choices[randomNumber]
+function getComputerChoice() {
+  const choices = ["Rock", "Paper", "Scissor"];
+  /*
+   *Math.random() will return a random number between 0 and 1
+   */
+  randomNumber = Math.floor(Math.random() * 3);
+  return choices[randomNumber];
 }
-getComputerChoice();
-console.log(getComputerChoice());
-/* 
-*reuse function will be called when the user click on the rock, paper, or scissor
-*/
-
+/*
+ *reuse function will be called when the user click on the rock, paper, or scissor
+ */
+function win(userChoice, computerChoice) {
+  userScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+  result_p.innerHTML = `${userChoice} beats ${computerChoice}. You win!`;
+  
+}
+function lose(userChoice, computerChoice) {
+  computerScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+  result_p.innerHTML = `${computerChoice} beats ${userChoice}. You lose!`;
+}
+function draw(userChoice) {
+  console.log("draw");
+  result_p.innerHTML = `User and computer choose the same that is ${userChoice}. It's a draw!`;
+}
 function game(userChoice) {
   const computerChoice = getComputerChoice();
-  console.log("user choice => " + userChoice);
-  console.log("computer choice => " + computerChoice);
-  switch(userChoice + computerChoice){
-    case "paperrock":
-    case "scissorpaper":
-    case "rockscissor":
-      console.log("user win")
+  switch (userChoice + computerChoice) {
+    case "PaperRock":
+    case "ScissorPaper":
+    case "RockScissor":
+      win(userChoice, computerChoice);
       break;
-    case "rockpaper":
-    case "paperscissor":
-    case "scissorrock":
-      console.log("user lose")
+    case "RockPaper":
+    case "PaperScissor":
+    case "ScissorRock":
+      lose(userChoice, computerChoice);
       break;
     default:
-      console.log("draw")
+      draw(userChoice, computerChoice);
   }
 }
 /*
@@ -64,21 +76,21 @@ function game(userChoice) {
 
 function main() {
   rock_div.addEventListener("click", function () {
-    game("rock");
+    game("Rock");
     // console.log("hey you clicked on rock");
   });
   paper_div.addEventListener("click", function () {
-    game("paper")
+    game("Paper");
     // console.log("hey you clicked on paper");
   });
   scissor_div.addEventListener("click", function () {
-    game("scissor")
+    game("Scissor");
     // console.log("hey you clicked on scissor");
   });
 }
 
-/* 
-*function need to be called so that it will be executed
-*/
+/*
+ *function need to be called so that it will be executed
+ */
 
 main();
