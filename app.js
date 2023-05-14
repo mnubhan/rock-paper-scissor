@@ -10,9 +10,9 @@ const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoredBoard_div = document.getElementsByClassName("score-board");
 const result_p = document.querySelector(".result > p");
-const rock_div = document.getElementById("r");
-const paper_div = document.getElementById("p");
-const scissor_div = document.getElementById("s");
+const rock_div = document.getElementById("Rock");
+const paper_div = document.getElementById("Paper");
+const scissor_div = document.getElementById("Scissor");
 
 /*
  *function for computer choice
@@ -28,13 +28,15 @@ function getComputerChoice() {
 }
 /*
  *reuse function will be called when the user click on the rock, paper, or scissor
+ *classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element
+ *add method is used to add one or more class names to the specified element
  */
 function win(userChoice, computerChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
   result_p.innerHTML = `${userChoice} beats ${computerChoice}. You win!`;
-  
+  document.getElementById(userChoice).classList.add("green-glow");
 }
 function lose(userChoice, computerChoice) {
   computerScore++;

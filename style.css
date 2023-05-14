@@ -65,18 +65,7 @@ h1 {
   right: -30px;
 }
 
-.green-glow{
-  border:4px solid #4dcc7d;
-  box-shadow: 0 0 10px #31b43a;
-}
-.red-glow{
-  border:4px solid #fc121b;
-  box-shadow: 0 0 10px #d01115;
-}
-.gray-glow{
-  border:4px solid #464647;
-  box-shadow: 0 0 10px #25292b;
-}
+
 
 .result{
   color: #2b2d42; /* color property is used to set text color */
@@ -118,4 +107,17 @@ img{
   font-family:Asap, sans-serif;
   font-weight:bold;
   font-size:20px;
+}
+
+.green-glow{
+  border:4px solid #4dcc7d;
+  box-shadow: 0 0 10px #31b43a;
+}
+.red-glow{
+  border:4px solid #fc121b;
+  box-shadow: 0 0 10px #d01115;
+}
+.gray-glow{
+  border:4px solid #464647;
+  box-shadow: 0 0 10px #25292b;
 }
