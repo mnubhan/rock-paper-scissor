@@ -27,26 +27,40 @@ function getComputerChoice() {
   return choices[randomNumber];
 }
 /*
- *reuse function will be called when the user click on the rock, paper, or scissor
+ *reuse function will be called when the user click on the rock, paper, or scissorx
  *classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element
  *add method is used to add one or more class names to the specified element
  */
 function win(userChoice, computerChoice) {
+  const userChoice_div = document.getElementById(userChoice);
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
   result_p.innerHTML = `${userChoice} beats ${computerChoice}. You win!`;
-  document.getElementById(userChoice).classList.add("green-glow");
+  userChoice_div.classList.add("green-glow");
+  setTimeout(() => {
+    userChoice_div.classList.remove("green-glow");
+  }, 300);
 }
 function lose(userChoice, computerChoice) {
+  const userChoice_div = document.getElementById(userChoice);
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
   result_p.innerHTML = `${computerChoice} beats ${userChoice}. You lose!`;
+  userChoice_div.classList.add("red-glow");
+  setTimeout(() => {
+    userChoice_div.classList.remove("red-glow");
+  }, 300);
 }
 function draw(userChoice) {
+  const userChoice_div = document.getElementById(userChoice);
   console.log("draw");
   result_p.innerHTML = `User and computer choose the same that is ${userChoice}. It's a draw!`;
+  userChoice_div.classList.add("gray-glow");
+  setTimeout(() => {
+    userChoice_div.classList.remove("gray-glow");
+  }, 300);
 }
 function game(userChoice) {
   const computerChoice = getComputerChoice();
@@ -77,15 +91,15 @@ function game(userChoice) {
  */
 
 function main() {
-  rock_div.addEventListener("click", function () {
+  rock_div.addEventListener("click", () => {
     game("Rock");
     // console.log("hey you clicked on rock");
   });
-  paper_div.addEventListener("click", function () {
+  paper_div.addEventListener("click", () => {
     game("Paper");
     // console.log("hey you clicked on paper");
   });
-  scissor_div.addEventListener("click", function () {
+  scissor_div.addEventListener("click", () => {
     game("Scissor");
     // console.log("hey you clicked on scissor");
   });
